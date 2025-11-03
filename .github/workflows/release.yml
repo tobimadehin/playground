@@ -68,7 +68,7 @@ jobs:
             
             ## Documentation
             
-            Visit our [documentation site](https://tobimadehin.github.io/playground) for usage examples and API reference.
+            Visit [documentation site](https://tobimadehin.github.io/playground) for usage examples and API reference.
           draft: false
           prerelease: false
 
