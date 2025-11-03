@@ -50,7 +50,7 @@ if (PlaygroundUtils.isExpired(instance)) {
 }
 ```
 
-**Done.** You now have a running instance and control over its lifecycle.
+**Done.** You now have a running instance!
 
 ---
 
