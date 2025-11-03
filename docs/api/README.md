@@ -296,36 +296,3 @@ playground.on('error', (error: PlaygroundError) => {
 });
 ```
 
-## Utilities
-
-### State Management
-
-```typescript
-import { PlaygroundState } from '@tobimadehin/playground';
-
-const state = new PlaygroundState('./state.json');
-
-// Save instances
-await state.save(instances);
-
-// Load instances
-const instances = await state.load();
-
-// Clear state
-await state.clear();
-```
-
-### Cost Calculator
-
-```typescript
-import { CostCalculator } from '@tobimadehin/playground';
-
-const calculator = new CostCalculator();
-
-const monthlyCost = calculator.calculateMonthlyCost({
-  provider: 'aws',
-  instanceType: 't3.micro',
-  hoursPerDay: 24,
-  daysPerMonth: 30
-});
-```
