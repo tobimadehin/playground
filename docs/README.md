@@ -1,3 +1,8 @@
+---
+layout: default
+title: Playground Documentation
+---
+
 # Playground
 
 > Multi-cloud deployment playground for developers

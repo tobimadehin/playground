@@ -1,3 +1,8 @@
+---
+layout: default
+title: Examples
+---
+
 # Examples
 
 Complete examples for different use cases and cloud providers.
