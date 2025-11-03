@@ -1,7 +1,7 @@
 {
   "name": "@tobimadehin/playground",
   "version": "1.0.8",
-  "description": "Stateless, cloud-agnostic ephemeral VM orchestration engine",
+  "description": "Multi-cloud ephemeral VM library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

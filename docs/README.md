@@ -5,9 +5,9 @@ title: Playground Documentation
 
 # Playground
 
-> Multi-cloud deployment playground for developers
+> Multi-cloud ephemeral VM library
 
-Playground provides a unified interface for creating and managing cloud instances across multiple providers (AWS, GCP, Azure, DigitalOcean) with simple configuration files.
+Playground provides a unified interface for creating and managing ephemeral virtual machines across multiple cloud providers. It handles provider selection and image mapping, but remains completely stateless.
 
 ## Quick Start
 
@@ -20,24 +20,28 @@ npm install @tobimadehin/playground
 ### 2. Basic Usage
 
 ```typescript
-import { Playground } from '@tobimadehin/playground';
+import { Playground, HetznerProvider, DigitalOceanProvider } from '@tobimadehin/playground';
 
-const playground = new Playground({
-  providers: {
-    aws: { region: 'us-east-1' },
-    gcp: { project: 'my-project', zone: 'us-central1-a' }
-  },
-  imageMappingsPath: './image-mappings.yaml'
+const providers = new Map();
+providers.set('hetzner', new HetznerProvider({ apiToken: process.env.HETZNER_API_TOKEN! }));
+providers.set('digitalocean', new DigitalOceanProvider({ apiToken: process.env.DO_API_TOKEN! }));
+
+const playground = new Playground({ 
+  providers,
+  imageMappingsPath: './examples/image-mappings.yaml'
 });
 
-// Create an instance
+// Create an ephemeral VM
 const instance = await playground.createInstance({
   imageType: 'ubuntu-22-small',
   sshKey: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAB... user@host'
 });
 
-console.log(`Instance created: ${instance.id}`);
-console.log(`SSH: ssh user@${instance.publicIp}`);
+console.log(`VM created: ${instance.id} at ${instance.ip}`);
+console.log(`Provider: ${instance.provider}, TTL: ${instance.ttl}s`);
+
+// Destroy when done
+await playground.destroyInstance(instance.provider, instance.id);
 ```
 
 ### 3. Image Mappings
@@ -46,33 +50,35 @@ Create an `image-mappings.yaml` file to define your cloud images:
 
 ```yaml
 ubuntu-22-small:
-  aws:
-    ami: ami-0c02fb55956c7d316
-    instanceType: t3.micro
-  gcp:
-    image: ubuntu-2204-jammy-v20231030
-    machineType: e2-micro
-  azure:
-    image: Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest
-    size: Standard_B1s
+  - provider: hetzner
+    image: ubuntu-22.04
+    size: cx11
+    priority: 1
+    ttl: 3600
+  - provider: digitalocean
+    image: ubuntu-22-04-x64
+    size: s-1vcpu-1gb
+    priority: 2
+    ttl: 3600
 ```
 
 ## Key Features
 
-- **Multi-cloud support**: AWS, GCP, Azure, DigitalOcean
-- **Unified API**: Same interface across all providers
+- **Multi-cloud support**: AWS, Azure, GCP, DigitalOcean, Hetzner, Oracle Cloud
+- **Stateless design**: No instance tracking or storage dependencies
+- **Priority-based selection**: Automatic provider selection based on priority
 - **Type-safe**: Full TypeScript support
 - **Flexible configuration**: YAML-based image mappings
-- **Cost-aware**: Built-in cost estimation
+- **TTL management**: Built-in time-to-live for ephemeral VMs
 
 ## Next Steps
 
-- [View Examples](/examples/) - Complete multi-cloud setups
-- [API Reference](/docs/api/) - Detailed API documentation
-- [GitHub Repository](https://github.com/tobimadehin/playground) - Source code and issues
+- [View Examples]({{ site.baseurl }}/examples/) - Complete usage examples
+- [API Reference]({{ site.baseurl }}/api/) - Detailed API documentation
+- [GitHub Repository]({{ site.github.repository_url }}) - Source code and issues
 
 ## Support
 
-- [Documentation](/examples/)
-- [Issues](https://github.com/tobimadehin/playground/issues)
-- [Discussions](https://github.com/tobimadehin/playground/discussions)
+- [Documentation]({{ site.baseurl }}/examples/)
+- [Issues]({{ site.github.repository_url }}/issues)
+- [Discussions]({{ site.github.repository_url }}/discussions)

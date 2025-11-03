@@ -2,9 +2,7 @@
 
 [![CI](https://github.com/tobimadehin/playground/actions/workflows/ci.yml/badge.svg)](https://github.com/tobimadehin/playground/actions/workflows/ci.yml)
 [![NPM Version](https://img.shields.io/npm/v/@tobimadehin/playground.svg)](https://www.npmjs.com/package/@tobimadehin/playground)
-[![Coverage Status](https://codecov.io/gh/tobimadehin/playground/branch/main/graph/badge.svg)](https://codecov.io/gh/tobimadehin/playground)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/node/v/@tobimadehin/playground.svg)](https://nodejs.org/)
 
 Playground lets you launch, manage, and clean up cloud instances across multiple providers. The playground itself is stateless, so you choose how to track instances.
 
@@ -19,14 +17,19 @@ npm install @tobimadehin/playground
 2. **Create a provider map**
 
 ```typescript
-import { AWSProvider } from './providers/aws';
-import { Playground } from '@tobimadehin/playground';
+import { AWSProvider, Playground } from '@tobimadehin/playground';
 
-const providers = new Map([
-  ['aws', new AWSProvider({ accessKey: '...', secretKey: '...', region: 'us-east-1' })]
-]);
+const providers = new Map();
+providers.set('aws', new AWSProvider({ 
+  accessKeyId: '...', 
+  secretAccessKey: '...', 
+  region: 'us-east-1' 
+}));
 
-const playground = new Playground({ providers });
+const playground = new Playground({ 
+  providers,
+  imageMappingsPath: './examples/image-mappings.yaml'
+});
 ```
 
 3. **Launch an instance**
@@ -49,8 +52,6 @@ if (PlaygroundUtils.isExpired(instance)) {
   await playground.destroyInstance(instance.provider, instance.id);
 }
 ```
-
-**Done.** You now have a running instance!
 
 ---
 
