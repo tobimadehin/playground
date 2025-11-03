@@ -1,6 +1,6 @@
 {
   "name": "@tobimadehin/playground",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stateless, cloud-agnostic ephemeral VM orchestration engine",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,18 @@
     "release:major": "npm version major && git push origin main --tags",
     "prepublishOnly": "npm test && npm run build"
   },
-  "keywords": ["cloud", "vm", "ephemeral", "aws", "azure", "gcp", "digitalocean", "hetzner", "oracle", "dployr"],
+  "keywords": [
+    "cloud",
+    "vm",
+    "ephemeral",
+    "aws",
+    "azure",
+    "gcp",
+    "digitalocean",
+    "hetzner",
+    "oracle",
+    "dployr"
+  ],
   "author": "Emmanuel Madehin",
   "license": "MIT",
   "repository": {
