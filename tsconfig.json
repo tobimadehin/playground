@@ -6,15 +6,25 @@
         "outDir": "dist",
         "strict": true,
         "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "paths": {
             "@/*": [
                 "src/*"
             ]
-        }
+        },
+        "types": [
+            "node",
+            "jest"
+        ]
     },
     "include": [
         "src/**/*",
         "test/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
     ]
 }
