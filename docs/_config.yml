@@ -38,5 +38,6 @@ rouge:
   theme: monokai
 
 # GitHub repository
+repository: tobimadehin/playground
 github:
   repository_url: https://github.com/tobimadehin/playground
