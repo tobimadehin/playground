@@ -1,0 +1,246 @@
+/* Custom dark theme enhancements */
+
+/* Navigation styling */
+.main-nav {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.nav-link {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+/* Enhanced code blocks */
+pre {
+    position: relative;
+    background: #1e1e1e !important;
+    border: 1px solid #3c3c3c;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+code {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+pre code {
+    background: transparent;
+    padding: 16px;
+    display: block;
+    overflow-x: auto;
+}
+
+/* Copy button for code blocks */
+.copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.copy-button:hover {
+    opacity: 1;
+    background: #555;
+}
+
+/* Improved blockquotes */
+blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid #64b5f6;
+    margin: 20px 0;
+    padding: 16px 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+blockquote p {
+    margin: 0;
+    color: #e0e0e0;
+}
+
+/* Better table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced links */
+a {
+    color: #64b5f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #90caf9;
+    text-decoration: underline;
+}
+
+/* Improved headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #fff;
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+h2 {
+    border-bottom: 1px solid #444;
+    padding-bottom: 8px;
+}
+
+/* Alert boxes */
+.alert {
+    padding: 16px;
+    margin: 20px 0;
+    border-radius: 6px;
+    border-left: 4px solid;
+}
+
+.alert-info {
+    background: rgba(33, 150, 243, 0.1);
+    border-color: #2196f3;
+    color: #e3f2fd;
+}
+
+.alert-warning {
+    background: rgba(255, 152, 0, 0.1);
+    border-color: #ff9800;
+    color: #fff3e0;
+}
+
+.alert-success {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: #4caf50;
+    color: #e8f5e8;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        margin: 15px 0;
+    }
+
+    .nav-link {
+        display: block;
+        margin: 5px 0;
+    }
+
+    pre {
+        margin: 15px -10px;
+        border-radius: 0;
+    }
+
+    .copy-button {
+        position: static;
+        display: block;
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
+
+/* VS Code Dark+ theme adjustments */
+.hljs {
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+    color: #569cd6 !important;
+}
+
+.hljs-string {
+    color: #ce9178 !important;
+}
+
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-built_in {
+    color: #4ec9b0 !important;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+    color: #9cdcfe !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #6a9955 !important;
+}
+
+.hljs-number {
+    color: #b5cea8 !important;
+}
+
+.hljs-function {
+    color: #dcdcaa !important;
+}
+
+.hljs-attr,
+.hljs-attribute {
+    color: #92c5f8 !important;
+}
+
+.hljs-tag {
+    color: #569cd6 !important;
+}
+
+.hljs-property {
+    color: #9cdcfe !important;
+}

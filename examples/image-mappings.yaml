@@ -1,0 +1,90 @@
+# Example image mappings for @tobimadehin/playground
+# Copy this file and customize it for your needs
+
+# Small development instances
+ubuntu-22-small:
+  - provider: hetzner
+    image: ubuntu-22.04
+    size: cx11
+    priority: 1
+    ttl: 3600
+  - provider: digitalocean
+    image: ubuntu-22-04-x64
+    size: s-1vcpu-1gb
+    priority: 2
+    ttl: 3600
+
+# Medium instances for testing
+ubuntu-22-medium:
+  - provider: hetzner
+    image: ubuntu-22.04
+    size: cx21
+    priority: 1
+    ttl: 7200
+  - provider: digitalocean
+    image: ubuntu-22-04-x64
+    size: s-2vcpu-2gb
+    priority: 2
+    ttl: 7200
+  - provider: aws
+    image: ami-0abcdef1234567890  # Ubuntu 22.04 LTS (us-east-1)
+    size: t3.small
+    priority: 3
+    ttl: 7200
+
+# Production-ready instances
+ubuntu-22-large:
+  - provider: aws
+    image: ami-0abcdef1234567890  # Ubuntu 22.04 LTS (us-east-1)
+    size: t3.medium
+    priority: 1
+    ttl: 86400
+  - provider: azure
+    image: Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest
+    size: Standard_B2s
+    priority: 2
+    ttl: 86400
+  - provider: gcp
+    image: projects/ubuntu-os-cloud/global/images/family/ubuntu-2204-lts
+    size: e2-standard-2
+    priority: 3
+    ttl: 86400
+
+# Debian alternatives
+debian-11-small:
+  - provider: hetzner
+    image: debian-11
+    size: cx11
+    priority: 1
+    ttl: 3600
+  - provider: digitalocean
+    image: debian-11-x64
+    size: s-1vcpu-1gb
+    priority: 2
+    ttl: 3600
+
+# CentOS/RHEL for enterprise
+centos-stream-9:
+  - provider: digitalocean
+    image: centos-stream-9-x64
+    size: s-2vcpu-2gb
+    priority: 1
+    ttl: 7200
+  - provider: oracle
+    image: ocid1.image.oc1.iad.aaaaaaaa...  # CentOS Stream 9
+    size: VM.Standard.E4.Flex
+    priority: 2
+    ttl: 7200
+
+# Windows instances (where supported)
+windows-2022:
+  - provider: aws
+    image: ami-0123456789abcdef0  # Windows Server 2022
+    size: t3.medium
+    priority: 1
+    ttl: 14400
+  - provider: azure
+    image: MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest
+    size: Standard_B2s
+    priority: 2
+    ttl: 14400

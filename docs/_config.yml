@@ -1,0 +1,42 @@
+title: Playground Docs
+description: Multi-cloud deployment playground for developers
+baseurl: "/playground"
+url: "https://tobimadehin.github.io"
+
+# Theme
+theme: jekyll-theme-slate
+remote_theme: pages-themes/slate@v0.2.0
+
+# Markdown processing
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Navigation
+navigation:
+  - title: Quick Start
+    url: /
+  - title: Examples
+    url: /examples/
+  - title: API Reference
+    url: /api/
+
+# Code highlighting theme
+rouge:
+  theme: monokai
+
+# GitHub repository
+github:
+  repository_url: https://github.com/tobimadehin/playground
