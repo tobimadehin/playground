@@ -309,15 +309,7 @@ setInterval(async () => {
 
 ---
 
-## **5. Integration Examples**
-
-* **Express.js API**: `/api/instances`
-* **Serverless (AWS Lambda)**: `/lambda/createInstance.ts`
-* **Other frameworks**: Same API usage pattern
-
----
-
-## **6. Best Practices**
+## **5. Best Practices**
 
 1. **Always store instance metadata** immediately after creation.
 2. **Implement robust cleanup** for expired instances.
