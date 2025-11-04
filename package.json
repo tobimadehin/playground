@@ -2,13 +2,14 @@
   "name": "@tobimadehin/playground",
   "version": "1.0.16",
   "description": "Multi-cloud ephemeral VM library",
+
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node scripts/convert-to-esm.cjs",
     "lint": "tsc --noEmit",
     "test": "npx jest",
     "test:watch": "npx jest --watch",
@@ -63,5 +64,6 @@
     "@google-cloud/compute": "^4.0.0",
     "js-yaml": "^4.1.0",
     "oci-sdk": "^2.0.0"
-  }
+  },
+  "type": "module"
 }
