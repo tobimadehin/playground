@@ -3,7 +3,7 @@
  * See LICENSE file for full license text
  */
 
-import { Provider, ImageSpec, Instance } from '@/providers/provider';
+import { Provider, ImageSpec, Instance } from './provider';
 import { DefaultAzureCredential } from '@azure/identity';
 import { ComputeManagementClient } from '@azure/arm-compute';
 import { NetworkManagementClient } from '@azure/arm-network';
