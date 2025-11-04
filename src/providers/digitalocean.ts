@@ -3,7 +3,7 @@
  * See LICENSE file for full license text
  */
 
-import { Provider, ImageSpec, Instance } from './provider';
+import { Provider, ImageSpec, Instance } from './provider.js';
 
 /**
  * DigitalOcean Provider configuration

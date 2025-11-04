@@ -3,7 +3,7 @@
  * See LICENSE file for full license text
  */
 
-import { Provider, ImageSpec, Instance } from './providers/provider';
+import { Provider, ImageSpec, Instance } from './providers/provider.js';
 import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 

@@ -3,7 +3,7 @@
  * See LICENSE file for full license text
  */
 
-import { Provider, ImageSpec, Instance } from './provider';
+import { Provider, ImageSpec, Instance } from './provider.js';
 import { EC2Client, RunInstancesCommand, TerminateInstancesCommand, DescribeInstancesCommand, ImportKeyPairCommand } from '@aws-sdk/client-ec2';
 
 /**

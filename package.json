@@ -8,7 +8,7 @@
     ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc && node scripts/convert-to-esm.cjs",
+    "build": "tsc",
     "lint": "tsc --noEmit",
     "test": "npx jest",
     "test:watch": "npx jest --watch",
