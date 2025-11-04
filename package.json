@@ -1,6 +1,6 @@
 {
   "name": "@tobimadehin/playground",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Multi-cloud ephemeral VM library",
   "type": "module",
   "main": "dist/index.js",
